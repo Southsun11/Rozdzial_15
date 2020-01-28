@@ -44,3 +44,11 @@ void Tv::settings()const
 		std::cout << "Wejscie: " << (input == TV ? "TV" : "DVD") << std::endl;
 	}
 }
+
+void Tv::change_mode2(Remote& r)
+{
+	if (this->mode == ON)
+		r.mode2 == Remote::NORMAL ? r.mode2 = Remote::INTERACTIVE : r.mode2 = Remote::NORMAL;
+	else
+		std::cout << "Telewizor wylaczony nie udalo siê zmienic tryby\n";
+}

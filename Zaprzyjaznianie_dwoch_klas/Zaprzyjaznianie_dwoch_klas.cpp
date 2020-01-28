@@ -16,6 +16,9 @@ int main()
     grey.volup(s42);
     std::cout << "Ustawienia telwizora po uzyciu pilota\n";
     s42.settings();
+    grey.show_mode2();
+    s42.change_mode2(grey);
+    grey.show_mode2();
     Tv s58(Tv::ON);
     s58.set_mode();
     grey.set_chan(s58, 28);
@@ -23,6 +26,7 @@ int main()
     s58.settings();
     std::cout << std::endl;
     s42.buzz(grey);
+
     return 0;
 
 }

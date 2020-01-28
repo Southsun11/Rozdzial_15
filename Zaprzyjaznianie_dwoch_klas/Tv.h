@@ -6,12 +6,17 @@ class Remote
 	friend class Tv;
 private:
 	int mode;
+	int mode2;
 public:
 	enum { OFF, ON };
 	enum { MINVAL, MAXVAL = 20 };
 	enum { ANTENNA, CABLE };
 	enum { TV, DVD };
-	Remote(int m = TV) :mode(m) {}
+	enum { NORMAL, INTERACTIVE };
+	Remote(int m = TV, int m2 = NORMAL) :mode(m), mode2(m2) {}
+	void show_mode2() {
+		std::cout << (mode2 == NORMAL ? "Tryb normalny":"Tryb Interaktywny") << std::endl;
+	}
 	bool volup(Tv& t);
 	bool voldown(Tv& t);
 	void onoff(Tv& t);
@@ -48,6 +53,7 @@ public:
 	void set_input() { input = (input == TV ? DVD : TV); }
 	void settings() const;
 	void buzz(Remote& r);
+	void change_mode2(Remote& r);
 };
 
 
